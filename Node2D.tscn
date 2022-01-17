@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/iu-14.png" type="Texture" id=2]
-[ext_resource path="res://assets/costume.svg" type="Texture" id=3]
-[ext_resource path="res://assets/costume0.svg" type="Texture" id=4]
+[ext_resource path="res://assets/VideoQuality.png" type="Texture" id=3]
+[ext_resource path="res://assets/Marketing.png" type="Texture" id=4]
 [ext_resource path="res://assets/bg.png" type="Texture" id=5]
 [ext_resource path="res://assets/win.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/GoldSponsor.png" type="Texture" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,20 +21,20 @@ texture = ExtResource( 5 )
 [node name="TextureButton" type="TextureButton" parent="canvas"]
 anchor_top = 0.000722631
 anchor_bottom = 0.000722656
-margin_left = 325.0
+margin_left = 433.0
 margin_top = 115.566
-margin_right = 500.0
-margin_bottom = 290.566
+margin_right = 722.0
+margin_bottom = 369.566
 texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="canvas"]
-margin_left = 81.6309
-margin_top = 119.48
-margin_right = 252.631
-margin_bottom = 334.48
+margin_left = 82.0
+margin_top = 119.0
+margin_right = 310.0
+margin_bottom = 371.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Points"
 __meta__ = {
@@ -41,11 +42,13 @@ __meta__ = {
 }
 
 [node name="bush" type="TextureButton" parent="canvas"]
-margin_left = 30.0
-margin_top = 220.0
-margin_right = 103.0
-margin_bottom = 267.0
-texture_normal = ExtResource( 3 )
+anchor_top = 0.00137975
+anchor_bottom = 0.00137975
+margin_left = 113.0
+margin_top = 391.172
+margin_right = 473.0
+margin_bottom = 553.172
+texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,11 +66,11 @@ __meta__ = {
 [node name="tree" type="TextureButton" parent="canvas"]
 anchor_left = 0.000654161
 anchor_right = 0.000654161
-margin_left = 31.3301
-margin_top = 280.0
-margin_right = 105.33
-margin_bottom = 326.0
-texture_normal = ExtResource( 4 )
+margin_left = 581.035
+margin_top = 389.279
+margin_right = 941.035
+margin_bottom = 551.279
+texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -89,10 +92,10 @@ __meta__ = {
 anchor_top = 0.00115479
 anchor_right = 0.009
 anchor_bottom = 0.0171548
-margin_left = 51.0
-margin_top = 366.638
-margin_right = 494.784
-margin_bottom = 507.038
+margin_left = 52.6558
+margin_top = 369.122
+margin_right = 496.44
+margin_bottom = 509.522
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -100,6 +103,18 @@ __meta__ = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="canvas"]
 stream = ExtResource( 6 )
+
+[node name="Sponsor" type="TextureButton" parent="canvas"]
+anchor_top = -0.0027595
+anchor_bottom = -0.0027595
+margin_left = 117.623
+margin_top = 419.771
+margin_right = 292.623
+margin_bottom = 594.771
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="mouse_entered" from="canvas/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
 [connection signal="pressed" from="canvas/TextureButton" to="." method="_on_TextureButton_pressed"]
@@ -111,3 +126,4 @@ stream = ExtResource( 6 )
 [connection signal="mouse_entered" from="canvas/tree" to="." method="_on_tree_mouse_entered"]
 [connection signal="mouse_exited" from="canvas/tree" to="." method="_on_tree_mouse_exited"]
 [connection signal="pressed" from="canvas/tree" to="." method="_on_tree_pressed"]
+[connection signal="pressed" from="canvas/Sponsor" to="." method="_on_Sponsor_pressed"]
